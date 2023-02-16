@@ -1,0 +1,45 @@
+@startuml Casos de Uso
+
+left to right direction
+
+' Declarar os atores
+actor Usuário as us
+actor Administrador as adm
+actor Colaborador as colab
+
+' Especialização do usuário
+adm -right-|> us
+colab -left-|> us
+
+' Declarar os casos de uso
+package "Salooni" {
+  usecase (Cadastrar salão) as uc1
+  usecase (Cadastrar especialidade) as uc2
+  usecase (Cadastrar colaborador) as uc3
+  usecase (Cadastrar cliente) as uc4
+  usecase (Criar agendamento) as uc5
+  usecase (Excluir agendamento) as uc6
+  usecase (Histórico de agendamento) as  uc7
+  usecase (Histórico de comissão) as uc8
+  usecase (Consultar clientes) as uc9
+  usecase (Excluir clientes) as uc10
+}
+
+' Relacionar os casos de uso com o Usuário
+us --> uc4
+us --> uc5
+us --> uc6
+us --> uc7
+us --> uc8
+us --> uc9
+
+' Relacionar os casos de uso com o Administrador
+adm --> uc1
+adm --> uc2
+adm --> uc3
+adm --> uc10
+
+' Relacionar os casos de uso com o Colaborador
+
+
+@enduml
